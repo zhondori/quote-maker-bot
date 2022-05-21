@@ -1,0 +1,19 @@
+{
+  "name": "dls-card-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "dev": "nodemon src/app.js",
+    "start": "node src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "jimp": "^0.16.1",
+    "mongoose": "^6.3.4",
+    "node-telegram-bot-api": "^0.57.0"
+  }
+}
