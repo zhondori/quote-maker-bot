@@ -8,22 +8,23 @@ const bot = new TelegramBot(TOKEN, {
     polling: true
 })
 
-// mongo();
+mongo();
 
 bot.on("message", async (msg) => {
     const user_id = msg.from.id;
-    const text = msg.text;
+    let user = await Users.findOne({
+        user_id
+    });
     try {
-       /*  if(!user) {
+        if(user) {
             MessageController(bot, msg);
         } else {
             user = await Users.create({
                 user_id
             });
             MessageController(bot, msg);
-        } */
-        MessageController(bot, msg);
+        }
     } catch (err) {
-        await bot.sendMessage(user_id, `${err.message}`);
+        await bot.sendMessage(user_id, `Botda xatolik yuz berdi. /start buyurg'ini bosib botni qayta ishga tushirishingiz mumkin.`);
     }
 })
